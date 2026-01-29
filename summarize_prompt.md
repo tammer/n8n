@@ -29,6 +29,9 @@ what, if anything was discussed about their idea/product/business 3 or 4 sentenc
 Section Heading: State of things / Traction:
 what have they accomplished so far 2 or 3 sentences max. If they have raised any money to-date, report how much.
 
+Section Heading: Advice
+If advice was given by the VC to the founder, summarize the adice given. If no advice given, then don't put this section.
+
 Section Heading: Next Steps
 what next steps were discussed 2 or 3 sentences max.
 
