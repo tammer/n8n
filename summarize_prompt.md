@@ -47,6 +47,10 @@ Infer what you can about the founders, what they are building and what might hav
 Section Heading: Discussion Points
 Summarize what was discussed in the meeting. 3 to 6 once sentence bullet points is ideal.
 
+Section Heading: Advice
+
+If advice was given by the VC to the founder, summarize the adice given.
+
 Section Heading: Next Steps
 what next steps were discussed 2 or 3 sentences max.
 
