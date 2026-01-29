@@ -48,7 +48,6 @@ Section Heading: Discussion Points
 Summarize what was discussed in the meeting. 3 to 6 once sentence bullet points is ideal.
 
 Section Heading: Advice
-
 If advice was given by the VC to the founder, summarize the adice given.
 
 Section Heading: Next Steps
@@ -65,6 +64,9 @@ Try to figure out who the people on the call are.  Be succinct.
 
 Section Heading: Discussion Points
 Summarize what was discussed in the meeting. 3 to 6 once sentence bullet points is ideal.
+
+Section Heading: Advice
+If advice was given by the VC to the founder, summarize the adice given.
 
 Section Heading: Next Steps
 what next steps were discussed 2 or 3 sentences max.
