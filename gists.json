@@ -1,0 +1,13 @@
+{
+    "model": "openai/gpt-oss-120b",
+    "messages": [
+      {
+        "role": "system",
+        "content": {{ JSON.stringify($('Get Prompt').first().json['data'])}}
+      },
+      {
+        "role": "user",
+        "content": {{ JSON.stringify($('simplify transcript').first().json['transcript'] )}}
+      }
+    ]
+  } 
