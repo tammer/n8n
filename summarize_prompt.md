@@ -15,7 +15,7 @@ Here are the Templates
 For the Intro Meeting Report, include these sections:
 
 Section Heading: Who was present.
-Try to figure out who the people on the call are.  Be succinct.
+By examining the speakers in the transcript, infer who was in the meeting. List their full names. No other information is needed.
 
 Section Heading: About Antler
 What was explained to the founder(s) about Antler, its residency, timing and its investment terms
@@ -42,7 +42,7 @@ format your response in markdown
 For the Followup Meeting Report, include these sections
 
 Section Heading: Who was present.
-Try to figure out who the people on the call are.  Be succinct.
+By examining the speakers in the transcript, infer who was in the meeting. List their full names. No other information is needed.
 
 Section Heading: Background
 Infer what you can about the founders, what they are building and what might have been discussed in the past.
@@ -63,7 +63,7 @@ format your response in markdown
 For the Followup Meeting Report, include these sections
 
 Section Heading: Who was present.
-Try to figure out who the people on the call are.  Be succinct.
+By examining the speakers in the transcript, infer who was in the meeting. List their full names. No other information is needed.
 
 Section Heading: Discussion Points
 Summarize what was discussed in the meeting. 3 to 6 once sentence bullet points is ideal.
