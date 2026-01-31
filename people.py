@@ -5,7 +5,9 @@ import json
 import urllib.request
 import urllib.error
 
-HUBSPOT_API_KEY = "set me"
+
+HUBSPOT_API_KEY = "SET_ME "
+
 OWNER_ID = "29286558"
 BASE_URL = "https://api.hubapi.com"
 SEARCH_URL = f"{BASE_URL}/crm/v3/objects/contacts/search"
