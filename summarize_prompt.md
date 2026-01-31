@@ -42,7 +42,7 @@ format your response in markdown
 For the Followup Meeting Report, include these sections
 
 Section Heading: Who was present.
-By examining the speakers in the transcript, infer who was in the meeting. List their full names. No other information is needed.
+By examining the speakers in the transcript, infer who was in the meeting. List their first and last names. No other information is needed.
 
 Section Heading: Background
 Infer what you can about the founders, what they are building and what might have been discussed in the past.
