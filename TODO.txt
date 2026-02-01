@@ -1,5 +1,9 @@
 TODO
 
+
+n8n: if no people found, empty list or else supapush fails
+
+
 This morning, DB work:
 
 downlload and upload
