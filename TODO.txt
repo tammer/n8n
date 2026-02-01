@@ -1,22 +1,17 @@
 TODO
 
+ok, so now the unique list of hubspot ids in our datqabase should be added to the
+list that groq tries to match.
 
-n8n: if no people found, empty list or else supapush fails
-
-
-This morning, DB work:
-
-downlload and upload
 new fields including created_at, occured_at
 field meeting_id
 
 
-- DB backup
 - auto tag with me
 - dont show untagged unless there are; make it red
 - someway to detect when two meetgeeks are in the meeting
 - at some point in the future, introduce teams that means if Francis is tagged, KHadian comes too
-- mayebe make receent a date picker?
+
 
 Vishal Chaudhary ancient.  what to do?
 
