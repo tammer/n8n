@@ -1,7 +1,11 @@
 TODO
 
+This morning, DB work:
 
-- need an id to not redo same meeting
+downlload and upload
+new fields including created_at, occured_at
+field meeting_id
+
 
 - DB backup
 - auto tag with me
@@ -11,6 +15,10 @@ TODO
 - mayebe make receent a date picker?
 
 Vishal Chaudhary ancient.  what to do?
+
+
+
+
 
 
 current issues:

@@ -107,7 +107,7 @@ if __name__ == "__main__":
             title = details.get("title", "")
             participant_emails = details.get("participant_emails", [])
             participant_emails_str = " and ".join(participant_emails)
-            lines = ", ".join([meeting_id, source, start_utc, title, participant_emails_str])
+            lines = ", ".join([title, meeting_id, source, start_utc, participant_emails_str])
 
             # Skip webhook if meeting was in 2025 and source is upload
             # if source != "upload":
