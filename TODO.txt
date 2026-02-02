@@ -1,5 +1,7 @@
 TODO
 
+delete all feb 2 and re run for that date only
+
 moving to flask
   move to flask first!!!!!
 why is Nicolae not there!!!!
