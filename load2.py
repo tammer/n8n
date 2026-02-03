@@ -3,12 +3,16 @@ Fetch all meetings from MeetGeek API.
 API docs: https://docs.meetgeek.ai/api-reference/v1/meetings
 """
 
+import argparse
 import os
+import re
 import urllib.request
 import urllib.error
 import urllib.parse
 import json
 import time
+
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def get_all_meetings(token: str | None = None) -> list[dict]:
@@ -23,7 +27,7 @@ def get_all_meetings(token: str | None = None) -> list[dict]:
         raise ValueError("Provide token or set MEETGEEK_API_TOKEN")
 
     # EU base URL (use api.meetgeek.ai or api-us.meetgeek.ai if needed)
-    base_url = "https://api.meetgeek.ai/v1/meetings"
+    base_url = "https://api.meetgeek.ai/v1/teams/1843/meetings"
     headers = {
         "Authorization": f"Bearer {api_token}",
         "Accept": "application/json",
@@ -91,9 +95,39 @@ def get_meeting(meeting_id: str, token: str | None = None) -> dict:
         raise RuntimeError(f"Request failed: {e.reason}") from e
 
 
+def meeting_date_utc(meeting: dict) -> str | None:
+    """Return yyyy-mm-dd of meeting start in UTC, or None if missing."""
+    ts = meeting.get("timestamp_start_utc") or ""
+    if not ts:
+        return None
+    # Handle ISO-like timestamps: "2025-02-03T14:00:00Z" or "2025-02-03 14:00:00"
+    return ts[:10] if len(ts) >= 10 else None
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Fetch MeetGeek meetings and send to webhook.")
+    parser.add_argument(
+        "date",
+        nargs="?",
+        default=None,
+        metavar="yyyy-mm-dd",
+        help="Optional: only process meetings that start on this date (UTC)",
+    )
+    args = parser.parse_args()
+
+    filter_date: str | None = None
+    if args.date is not None:
+        if not DATE_RE.match(args.date):
+            parser.error("date must be in format yyyy-mm-dd")
+        filter_date = args.date
+
     meetings = get_all_meetings()
-    print(f"Fetched {len(meetings)} meetings\n", flush=True)
+
+    if filter_date is not None:
+        meetings = [m for m in meetings if meeting_date_utc(m) == filter_date]
+        print(f"Filtered to {len(meetings)} meetings on {filter_date}\n", flush=True)
+    else:
+        print(f"Fetched {len(meetings)} meetings\n", flush=True)
 
     webhook_base = "https://tammer.app.n8n.cloud/webhook/supa-from-id"
 
@@ -108,14 +142,6 @@ if __name__ == "__main__":
             participant_emails = details.get("participant_emails", [])
             participant_emails_str = " and ".join(participant_emails)
             lines = ", ".join([title, meeting_id, source, start_utc, participant_emails_str])
-
-            # Skip webhook if meeting was in 2025 and source is upload
-            # if source != "upload":
-            #     print("  -> skipped (already uploaded)")
-            #     continue
-            # if join_link is None:
-            #     print("  -> skipping join link is None")
-            #     continue
 
             url = f"{webhook_base}?id={meeting_id}"
             try:
